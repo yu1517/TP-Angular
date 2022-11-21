@@ -1,0 +1,20 @@
+<table class="table">
+    <thead class="table-light">
+        <tr>
+            <th>Imagen</th>
+            <th>Titulo</th>
+            <th>Autor</th>
+            <th>Precio</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><img [src]="book.image" [alt]="book.title"></td>
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.price}}</td>
+            <td>{{book.stock}}</td>
+        </tr>
+    </tbody>
+</table>
