@@ -6,15 +6,22 @@
             <th>Autor</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Compra</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td><img [src]="book.image" [alt]="book.title"></td>
+        <tr *ngFor="let book of books" [ngClass]="{'clearance': book.clearance}">
+            <!-- books=coleccion del lado derecho y book=item de cada iteracion del lado izquierdo -->
+            <td><img [src]="book.image" [alt]="book.title" class="img-thumbnail imgTable"></td>
             <td>{{book.title}}</td>
             <td>{{book.author}}</td>
-            <td>{{book.price}}</td>
-            <td>{{book.stock}}</td>
+            <td>{{book.price | currency}}</td>
+            <td><span class="btn btn-warning" *ngIf="book.stock==0">SIN STOCK</span></td>
+            <td>
+                <button type="button" class="btn btn-outline-dark" (click)="downQuantity(book)">-</button>
+                <input type="text" [(ngModel)]="book.quantity" (keyup)="changeQuantity($event, book)">
+                <button type="button" class="btn btn-outline-dark" (click)="upQuantity(book)">+</button>
+            </td>
         </tr>
     </tbody>
 </table>
