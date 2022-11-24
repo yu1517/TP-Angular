@@ -3,6 +3,12 @@
 }
 
 .clearance {
-    border: 2px solid rgb(45, 192, 45);
+    border: 2px solid green;
     background-color: rgb(45, 192, 45);
+}
+td{
+  vertical-align: middle;
+}
+input{
+  max-width: 40px;
 }

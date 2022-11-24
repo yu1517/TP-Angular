@@ -7,8 +7,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
+                <a class="nav-link" [routerLink]="['/about']">Contacto</a>
                 <!-- <a class="nav-link" href="#">Pricing</a>
                 <a class="nav-link disabled">Disabled</a> -->
             </div>
@@ -17,16 +17,7 @@
 </nav>
 <div>
     <div class="container">
-        <div class="row">
-            <div class="col-8">
-                <app-book-list></app-book-list> <!-- componente especifico para la lista de libros -->
-            </div>
-            <!--col*8 quiere decir que tiene 8 columnas-->
-            <div class="col-4">
-                Carrito de compras
-            </div>
-            <!--col-4 tiene 4 columnas//el total de columnas siempre es 12 -->
-        </div>
+    <router-outlet></router-outlet>
     </div>
 </div>
 <footer>{{title}} 2022</footer>
