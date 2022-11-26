@@ -37,17 +37,7 @@ export class BookListComponent {
       quantity: 0,
     },
   ];
-  upQuantity(book: Book): void { // este metodo devuelve void porque no lo vamos a utilizar
-    if (book.quantity < book.stock)
-      book.quantity++;
-  }
-  downQuantity(book: Book): void {
-    if (book.quantity > 0)
-      book.quantity--;
-  }
-  changeQuantity(event, book: Book): void {
-    console.log(event.key);
-  }
+
 
   // Funcion que sube/baja cantidad a comprar con parametro ball de tipo Ball.
   // upQuantity(): void { // este metodo devuelve void porque no lo vamos a utilizar
@@ -95,4 +85,4 @@ export class BookListComponent {
 
 }
 
-  // 
+  //

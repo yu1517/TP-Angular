@@ -18,17 +18,7 @@
             <td>{{book.price | currency}}</td>
             <td><span class="btn btn-warning" *ngIf="book.stock==0">SIN STOCK</span></td>
             <td>
-              <div class="input-group">
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-dark" (click)="downQuantity(book)">-</button>
-                </div>
-                  <input class="text-centre" type="number" [(ngModel)]="book.quantity"
-                    (keyup)="changeQuantity($event, book)">
-                <!-- keyup = al tocar una tecla. $event captura la info de todo el evento y la interaccion del usuario -->
-                <div class="input-group-append">
-                  <button type="button" class="btn btn-dark" (click)="upQuantity(book)">+</button>
-                </div>
-              </div>
+              <app-input-integer [quantity]="book.quantity" *ngIf="book.stock"></app-input-integer>
             </td>
         </tr>
     </tbody>
