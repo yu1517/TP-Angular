@@ -39,6 +39,10 @@ export class BookListComponent {
     },
   ];
 
+  maxReached(m: string) {
+    alert(m);
+  }
+
 
   // Funcion que sube/baja cantidad a comprar con parametro ball de tipo Ball.
   // upQuantity(): void { // este metodo devuelve void porque no lo vamos a utilizar
