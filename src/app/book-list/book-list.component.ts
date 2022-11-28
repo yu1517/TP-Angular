@@ -9,6 +9,7 @@ import { Book } from './Book'; //importa la interfas book del archivo book
 })
 
 export class BookListComponent {
+[x: string]: any;
   books: Book[] = [
     {
       title: "Los Siete Maridos de Evelyn Hugo",

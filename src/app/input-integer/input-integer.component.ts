@@ -1,31 +1,46 @@
-import { Component, Input } from '@angular/core';
-import { Book } from '../book-list/Book';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-integer',
   templateUrl: './input-integer.component.html',
   styleUrls: ['./input-integer.component.scss']
 })
-export class InputIntegerComponent {
+export class InputIntegerComponent implements OnInit {
 
   constructor() { }
 
   @Input()
-  quantity: number;
+  quantity!: number;
 
   @Input()
-  max: number();
+  max!: number;
 
-  upQuantity(book: Book): void { // este metodo devuelve void porque no lo vamos a utilizar
-    if (book.quantity < book.stock)
-      book.quantity++;
+  @Output()
+  quantityChange: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  maxReached: EventEmitter<string> = new EventEmitter<string>();
+
+  ngOnInit(): void {
   }
-  downQuantity(book: Book): void {
-    if (book.quantity > 0)
-      book.quantity--;
+
+  upQuantity(): void {
+    if(this.quantity < this.max) {
+      this.quantity++;
+      this.quantityChange.emit(this.quantity);
+    }
+    else
+      this.maxReached.emit("Se alcanzó el maximo disponible de stock!");
   }
-  changeQuantity(event, book: Book): void {
+
+  downQuantity(): void {
+    if(this.quantity > 0){
+      this.quantity--;
+      this.quantityChange.emit(this.quantity);
+    }
+  }
+  changeQuantity(event): void {
     console.log(event.key);
+    this.quantityChange.emit(this.quantity);
   }
-
 }

@@ -1,12 +1,12 @@
 <div class="input-group">
   <div class="input-group">
     <div class="input-group-append">
-      <button type="button" class="btn btn-dark" (click)="downQuantity()">-</button>
+      <button class="btn btn-dark" (click)="downQuantity()">-</button>
     </div>
-    <input class="text-center" type="number" [(ngModel)]="quantity" (keyup)="changeQuantity($event)">
+    <input class="text-center" type="text" [(ngModel)]="quantity" (keyup)="changeQuantity($event)" />
     <!-- keyup = al tocar una tecla. $event captura la info de todo el evento y la interaccion del usuario -->
     <div class="input-group-append">
-      <button type="button" class="btn btn-dark" (click)="upQuantity()">+</button>
+      <button class="btn btn-dark" (click)="upQuantity()">+</button>
     </div>
   </div>
 </div>
