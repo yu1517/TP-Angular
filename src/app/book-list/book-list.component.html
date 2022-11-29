@@ -18,9 +18,9 @@
             <td>{{book.price | currency}}</td>
             <td><span class="btn btn-warning" *ngIf="book.stock==0">SIN STOCK</span></td>
             <td>
-              <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-integer>
-              Cant: {{book.quantity}}
+                <app-input-integer [(quantity)]="book.quantity" [max]="book.stock" *ngIf="book.stock" (maxReached)="maxReached($event)"></app-input-integer>
             </td>
+            <button class="btn" (click)="addToCart(book)">Comprar</button>
         </tr>
     </tbody>
 </table>

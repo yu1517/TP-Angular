@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BookCartService } from '../book-cart.service';
 //import { EventEmitter } from '@angular/core';
 import { Book } from './Book'; //importa la interfas book del archivo book
 
@@ -39,6 +40,16 @@ export class BookListComponent {
     },
   ];
 
+  constructor(private cart: BookCartService) {
+    
+  }
+
+  addToCart(book): void{
+    this.cart.addToCart(book);
+    book.stock -= book.quantity;
+    book.quantity = 0;
+  }
+  
   maxReached(m: string) {
     alert(m);
   }
