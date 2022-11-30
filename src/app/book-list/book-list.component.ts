@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BookCartService } from '../book-cart.service';
+import { BookDataService } from '../book-data.service';
 //import { EventEmitter } from '@angular/core';
 import { Book } from './Book'; //importa la interfas book del archivo book
 
@@ -11,37 +12,15 @@ import { Book } from './Book'; //importa la interfas book del archivo book
 
 export class BookListComponent {
 [x: string]: any;
-  books: Book[] = [
-    {
-      title: "Los Siete Maridos de Evelyn Hugo",
-      author: "Taylor Jenkins",
-      price: 4900,
-      stock: 2,
-      image: "assets/img/losSieteMaridosdeEvelynHugo.jpg",
-      clearance: false,
-      quantity: 0,
-    },
-    {
-      title: "Caballo de Fuego - Paris",
-      author: "Florencia Bonelli",
-      price: 4300,
-      stock: 9,
-      image: "assets/img/caballodefuego-paris.jpg",
-      clearance: true,
-      quantity: 0,
-    }, {
-      title: "Asesinato en el Orient Express",
-      author: "Agatha Christie",
-      price: 3900,
-      stock: 0,
-      image: "assets/img/AsesinatoenelOrientExpress.jpg",
-      clearance: false,
-      quantity: 0,
-    },
-  ];
+  books: Book[] = [];
 
-  constructor(private cart: BookCartService) {
-    
+  constructor(
+    private cart: BookCartService,
+    private booksDataService: BookDataService) {
+  }
+
+  ngOnInit(): void{
+    this.booksDataService.getAll().subscribe(books => this.books = books);
   }
 
   addToCart(book): void{
@@ -49,7 +28,7 @@ export class BookListComponent {
     book.stock -= book.quantity;
     book.quantity = 0;
   }
-  
+
   maxReached(m: string) {
     alert(m);
   }

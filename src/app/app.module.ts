@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './book-list/book-list.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { LibraryAboutComponent } from './library-about/library-about.component';
 import { LibraryBooksComponent } from './library-books/library-books.component';
@@ -24,6 +26,7 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
