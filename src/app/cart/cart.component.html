@@ -5,7 +5,7 @@
     </li>
 </ul> -->
 <div class="container">
-    <h1 class="text-center">Mi carrito</h1>
+    <h1 class="text-center">Mi Carrito</h1>
     <div class="row">
         <div class="col-sm-12 col-md-12 col-lg-12 mx-auto">
             <table class="table">
@@ -26,13 +26,14 @@
                         <td class="align-middle">{{book.quantity}}</td>
                         <td class="align-middle">{{book.price * book.quantity | currency}}</td>
                         <td>
-                          <button (click)="remove(book.id)" class="btn btn-outline-danger p-0 border-0 me-2 bg-transparent fs-4">
+                          <button (click)="remove(book)" class="btn btn-outline-danger p-0 border-0 me-2 bg-transparent fs-4">
                             <i class="bi bi-trash3"></i>
                           </button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+            <button type="button" class="btn btn-secondary" (click)="emptyCart()">Vaciar Carrito</button>
             <div class="d-flex justify-content-center">
                 <p class="h2 mr-4">Total {{total | currency}}</p>
                 <!-- <button class="btn btn-primary">Finalizar compra</button> -->

@@ -18,7 +18,11 @@ export class CartComponent {
     this.total = cart.total;
   }
 
-  remove(id: number): void {
+  remove(book: Book): void{
+    this.cart.remove(book);
+    book.stock += book.quantity;
+  }
+  emptyCart():void {
     this.cart.clearCart();
     this.total = 0;
   }

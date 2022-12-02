@@ -19,7 +19,12 @@
                 <td class="align-middle">{{book.title}}</td>
                 <td class="align-middle">{{book.author}}</td>
                 <td class="align-middle">{{book.price | currency}}</td>
-                <td class="align-middle"><span class="badge text-bg-warning" *ngIf="book.stock==0">SIN STOCK</span></td>
+                <td class="align-middle">
+                  <span class="badge text-bg-warning" *ngIf="book.stock==0">
+                    SIN STOCK
+                  </span>
+                  <span>{{book.stock}}</span>
+                </td>
                 <td class="align-middle">
                     <app-input-integer [(quantity)]="book.quantity"
                     [max]="book.stock"
@@ -31,5 +36,8 @@
                 </td>
             </tr>
         </tbody>
+        <div>
+          <p>*Cuadros resaltado para libros en oferta</p>
+        </div>
     </table>
 </div>

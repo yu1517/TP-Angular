@@ -28,4 +28,12 @@ export class BookCartService {
     this._cartList = [];
     this.cartList.next(this._cartList);
   }
+  remove(book: Book){
+    for (let i = 0; i < this._cartList.length; i++) {
+      if(this._cartList[i].title == book.title ){
+        this._cartList.splice(i, book.id);
+      }
+    }
+
+  }
 }
