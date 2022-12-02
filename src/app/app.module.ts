@@ -12,6 +12,8 @@ import { LibraryAboutComponent } from './library-about/library-about.component';
 import { LibraryBooksComponent } from './library-books/library-books.component';
 import { CartComponent } from './cart/cart.component';
 import { InputIntegerComponent } from './input-integer/input-integer.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InputIntegerComponent } from './input-integer/input-integer.component';
     LibraryAboutComponent,
     LibraryBooksComponent,
     CartComponent,
-    InputIntegerComponent
+    InputIntegerComponent,
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

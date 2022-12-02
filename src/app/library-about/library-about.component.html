@@ -1,3 +1,75 @@
+<!-- <div class="container">
 <p>Nombre: Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quis nulla doloremque, amet quia possimus, quae provident ullam earum impedit nihil quibusdam totam unde beatae ad excepturi? Dicta, porro ipsa! </p>
 <p>Direccion: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id officiis consequuntur ut alias odit soluta obcaecati reiciendis adipisci eius incidunt asperiores ipsum praesentium rerum architecto dolores cum, quibusdam corporis vitae?</p>
 <p>Mail: Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, atque aliquid eius dolor aliquam cum quos eos dolores facere, quae nulla reiciendis et est. Esse a quos accusantium magnam neque?</p>
+</diva> -->
+<h3 class="atencion">Atencion al cliente</h3>
+<div class="atencion-al-cliente">
+<p>Puede contactarse con atención al cliente enviando un email a info@lorem.com</p>
+<br>
+<p><b>Para consultas sobre su compra online o si tiene dudas de cómo comprar, envíe un email a ventas@lorem.com, incluyendo
+el número de orden o llame al (123) 12 345 678.
+Horario de atención. de lunes a sábado de 9.00 a 19.00 (hora argentina)</b></p>
+<br>
+<p>Por otros temas y consultas utilice el siguiente formulario. Podrá elegir el tema de su consulta en el menú desplegable
+del "Asunto".</p>
+</div>
+
+<h3 class="formulario">Formulario de Contacto</h3>
+<form class="row g-3 needs-validation" novalidate>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip01" class="form-label">Nombre</label>
+    <input type="text" class="form-control" id="validationTooltip01" value="" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Apellido</label>
+    <input type="text" class="form-control" id="validationTooltip02" value="" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltip02" class="form-label">Email</label>
+    <input type="text" class="form-control" id="validationTooltip02" value="" required>
+    <div class="valid-tooltip">
+      Looks good!
+    </div>
+  </div>
+  <div class="col-md-4 position-relative">
+    <label for="validationTooltipUsername" class="form-label">Nombre de Usuario</label>
+    <div class="input-group has-validation">
+      <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+      <input type="text" class="form-control" id="validationTooltipUsername"
+        aria-describedby="validationTooltipUsernamePrepend" required>
+      <div class="invalid-tooltip">
+        Por favor, elija un nombre de usuario único y válido.
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 position-relative">
+    <label for="validationTooltip03" class="form-label">Ciudad</label>
+    <input type="text" class="form-control" id="validationTooltip03" required>
+    <div class="invalid-tooltip">
+      Por favor, indique una ciudad válida.
+    </div>
+  </div>
+  <div class="col-md-3 position-relative">
+    <label for="validationTooltip04" class="form-label">Asunto</label>
+    <select class="form-select" id="validationTooltip04" required>
+      <option selected disabled value="">Mi compra online</option>
+      <option>Informacion libros</option>
+      <option value="">Compras mayoristas</option>
+      <option value="">Otros</option>
+    </select>
+    <div class="invalid-tooltip">
+      Elija una opcion.
+    </div>
+  </div>
+  <div class="col-12">
+    <button class="btn btn-primary" type="submit">Enviar</button>
+  </div>
+</form>
+

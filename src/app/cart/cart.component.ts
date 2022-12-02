@@ -11,8 +11,15 @@ import { Book } from '../book-list/Book';
 export class CartComponent {
 
   cartList$: Observable<Book[]>;
-  
+  public total: number = 0;
+
   constructor(private cart: BookCartService) {
     this.cartList$ = cart.cartList.asObservable();
+    this.total = cart.total;
+  }
+
+  remove(id: number): void {
+    this.cart.clearCart();
+    this.total = 0;
   }
 }

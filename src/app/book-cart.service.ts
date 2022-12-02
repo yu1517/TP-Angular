@@ -8,8 +8,8 @@ import { Book } from './book-list/Book';
 export class BookCartService {
 
   private _cartList: Book[] = [];
-  
-  cartList: BehaviorSubject<Book[]> = new BehaviorSubject(this._cartList);
+  public cartList: BehaviorSubject<Book[]> = new BehaviorSubject(this._cartList);
+  public total: number = 0;
 
   constructor() { }
 
@@ -20,6 +20,12 @@ export class BookCartService {
     } else {
       item.quantity += book.quantity;
     }
+    this.total += book.price * book.quantity;
     this.cartList.next(this._cartList); // equivale al emit del evento
+  }
+
+  clearCart() {
+    this._cartList = [];
+    this.cartList.next(this._cartList);
   }
 }
