@@ -27,6 +27,7 @@ export class BookCartService {
   clearCart() {
     this._cartList = [];
     this.cartList.next(this._cartList);
+    this.total = 0;
   }
   remove(book: Book){
     for (let i = 0; i < this._cartList.length; i++) {
@@ -34,6 +35,5 @@ export class BookCartService {
         this._cartList.splice(i, book.id);
       }
     }
-
   }
 }
